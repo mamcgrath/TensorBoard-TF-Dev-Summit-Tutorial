@@ -23,13 +23,13 @@ else:
   from urllib import urlretrieve
 
 LOGDIR = '/tmp/mnist_tutorial/'
-GIST_URL ='https://gist.githubusercontent.com/mamcgrath/f02491637d4f66971cc11ac1225b6890/raw/dfb8ee95b010480d56a73f324aca480b3820c180/'
+GITHUB_URL ='https://raw.githubusercontent.com/mamcgrath/TensorBoard-TF-Dev-Summit-Tutorial/master/'
 
 ### MNIST EMBEDDINGS ###
 mnist = tf.contrib.learn.datasets.mnist.read_data_sets(train_dir=LOGDIR + 'data', one_hot=True)
 ### Get a sprite and labels file for the embedding projector ###
-urlretrieve(GIST_URL + 'labels_1024.tsv', LOGDIR + 'labels_1024.tsv')
-urlretrieve(GIST_URL + 'sprite_1024.png', LOGDIR + 'sprite_1024.png')
+urlretrieve(GITHUB_URL + 'labels_1024.tsv', LOGDIR + 'labels_1024.tsv')
+urlretrieve(GITHUB_URL + 'sprite_1024.png', LOGDIR + 'sprite_1024.png')
 
 # Add convolution layer
 def conv_layer(input, size_in, size_out, name="conv"):
